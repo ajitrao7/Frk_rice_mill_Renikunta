@@ -206,9 +206,8 @@
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2026-04-06 10:24:26.116161",
+ "modified": "2026-04-08 13:00:41.218651",
  "modified_by": "Administrator",
  "module": "frk_procurement",
  "name": "FRK Batch",
@@ -224,7 +223,6 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
-   "submit": 1,
    "write": 1
   }
  ],

@@ -125,9 +125,8 @@
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2026-04-01 22:40:41.254737",
+ "modified": "2026-04-08 11:51:42.913893",
  "modified_by": "Administrator",
  "module": "frk_procurement",
  "name": "FRK Purchase Order",
@@ -143,7 +142,6 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
-   "submit": 1,
    "write": 1
   }
  ],
