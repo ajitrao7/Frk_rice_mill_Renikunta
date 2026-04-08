@@ -1,0 +1,452 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-04-01 22:06:46.066733",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_transaction_information_tab",
+  "basic_transaction_information_section",
+  "bill_number",
+  "transaction_date",
+  "purchase_order",
+  "authority",
+  "column_break_mxnz",
+  "particulars",
+  "place_or_village",
+  "rice_type",
+  "rate",
+  "stock_source_and_party_information_tab",
+  "stock_source_and_party_information_section",
+  "stock_source_model",
+  "through_party",
+  "bags_brand",
+  "billing_firm",
+  "column_break_jeml",
+  "hyderabad_entity",
+  "purchase_bill_number",
+  "sale_bill_number",
+  "tab_3_tab",
+  "quantity_and_vehicle_details_section",
+  "quantity_mt",
+  "is_sulthanabad_transaction",
+  "deposited_quantity_mt",
+  "lifted_quantity_mt",
+  "billable_quantity_mt",
+  "column_break_sotx",
+  "vehicle_number",
+  "driver_name",
+  "driver_mobile",
+  "delivery_type",
+  "delivery_location",
+  "document_workflow_tab",
+  "dc_number",
+  "dc_date",
+  "dc_submitted_date",
+  "ack_received",
+  "ack_received_date",
+  "days_pending_ack",
+  "document_workflow_status",
+  "financial_calculations_tab",
+  "financial_calculations_section",
+  "rate_per_mt",
+  "taxable_amount",
+  "gst_rate_",
+  "gst_amount",
+  "column_break_ecjb",
+  "invoice_total",
+  "invoice_number",
+  "invoice_date",
+  "payment_tracking_tab",
+  "payment_tracking_section",
+  "payment_received_date",
+  "received_amount",
+  "tds_rate_",
+  "tds_amount",
+  "outstanding_amount",
+  "payment_status",
+  "batch_assignment_child_table_tab",
+  "batch_assignment_child_table_section",
+  "batch_assignment"
+ ],
+ "fields": [
+  {
+   "fieldname": "bill_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Bill Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "transaction_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Transaction Date"
+  },
+  {
+   "fetch_from": "purchase_order.authority",
+   "fieldname": "authority",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Authority",
+   "options": "FRK Entity"
+  },
+  {
+   "fieldname": "column_break_mxnz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "particulars",
+   "fieldtype": "Select",
+   "label": "Particulars",
+   "options": "NCCF\nNAFED\nAP\nNV"
+  },
+  {
+   "fetch_from": "purchase_order.delivery_location__village",
+   "fieldname": "place_or_village",
+   "fieldtype": "Link",
+   "label": "Place / Village",
+   "options": "FRK Purchase Order",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "purchase_order.rice_type",
+   "fieldname": "rice_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Rice Type",
+   "options": "FRK Purchase Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "purchase_order",
+   "fieldtype": "Link",
+   "label": "Purchase Order",
+   "options": "FRK Purchase Order"
+  },
+  {
+   "fetch_from": "purchase_order.rate_per_mt",
+   "fieldname": "rate",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Rate",
+   "options": "FRK Purchase Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "basic_transaction_information_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Transaction Information"
+  },
+  {
+   "fieldname": "stock_source_and_party_information_tab",
+   "fieldtype": "Tab Break",
+   "label": "Stock Source and Party Information"
+  },
+  {
+   "fieldname": "stock_source_model",
+   "fieldtype": "Select",
+   "label": "Stock Source Model",
+   "options": "Own Production\nAggregation\nPremix-Supplied Production"
+  },
+  {
+   "depends_on": "eval:doc.stock_source_model !=\"Own Production\"",
+   "fieldname": "through_party",
+   "fieldtype": "Link",
+   "label": "Through Party",
+   "link_filters": "[[\"FRK Entity\",\"entity_type\",\"=\",\"Client Entity\"]]",
+   "options": "FRK Entity"
+  },
+  {
+   "fieldname": "bags_brand",
+   "fieldtype": "Link",
+   "label": "Bags Brand",
+   "link_filters": "[[\"FRK Entity\",\"has_bag_brand\",\"=\",1]]",
+   "options": "FRK Entity"
+  },
+  {
+   "fieldname": "billing_firm",
+   "fieldtype": "Select",
+   "label": "Billing Firm",
+   "options": "SSS\nRK"
+  },
+  {
+   "fieldname": "hyderabad_entity",
+   "fieldtype": "Link",
+   "label": "Hyderabad Entity",
+   "link_filters": "[[\"FRK Entity\",\"is_hyderabad_group\",\"=\",1]]",
+   "options": "FRK Entity"
+  },
+  {
+   "fieldname": "purchase_bill_number",
+   "fieldtype": "Data",
+   "label": "Purchase Bill Number",
+   "mandatory_depends_on": "eval:doc.stock_source_model==\"Supplier Aggregation\""
+  },
+  {
+   "fieldname": "sale_bill_number",
+   "fieldtype": "Data",
+   "label": "Our Sale Bill Number"
+  },
+  {
+   "fieldname": "column_break_jeml",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "basic_transaction_information_tab",
+   "fieldtype": "Tab Break",
+   "label": "Basic Transaction Information"
+  },
+  {
+   "fieldname": "tab_3_tab",
+   "fieldtype": "Tab Break",
+   "label": "Quantity & Vehicle Details"
+  },
+  {
+   "fieldname": "quantity_mt",
+   "fieldtype": "Float",
+   "label": "Quantity (MT)"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_sulthanabad_transaction",
+   "fieldtype": "Check",
+   "label": "Is SULTHANABAD Transaction"
+  },
+  {
+   "depends_on": "eval:doc.is_SULTHANABAD == 1",
+   "fieldname": "deposited_quantity_mt",
+   "fieldtype": "Float",
+   "label": "Deposited Quantity (MT)"
+  },
+  {
+   "depends_on": "eval:doc.is_SULTHANABAD == 1",
+   "fieldname": "lifted_quantity_mt",
+   "fieldtype": "Float",
+   "label": "Lifted Quantity (MT)"
+  },
+  {
+   "fieldname": "billable_quantity_mt",
+   "fieldtype": "Float",
+   "label": "Billable Quantity (MT)"
+  },
+  {
+   "fieldname": "vehicle_number",
+   "fieldtype": "Data",
+   "label": "Vehicle Number"
+  },
+  {
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "label": "Driver Name"
+  },
+  {
+   "fieldname": "driver_mobile",
+   "fieldtype": "Data",
+   "label": "Driver Mobile"
+  },
+  {
+   "fieldname": "delivery_type",
+   "fieldtype": "Select",
+   "label": "Delivery Type",
+   "options": "Direct to Authority\nDelivery to Client Entity"
+  },
+  {
+   "fieldname": "delivery_location",
+   "fieldtype": "Data",
+   "label": "Delivery Location"
+  },
+  {
+   "fieldname": "stock_source_and_party_information_section",
+   "fieldtype": "Section Break",
+   "label": "Stock Source and Party Information"
+  },
+  {
+   "fieldname": "quantity_and_vehicle_details_section",
+   "fieldtype": "Section Break",
+   "label": "Quantity and Vehicle Details"
+  },
+  {
+   "fieldname": "column_break_sotx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "document_workflow_tab",
+   "fieldtype": "Tab Break",
+   "label": "Document Workflow"
+  },
+  {
+   "fieldname": "dc_number",
+   "fieldtype": "Data",
+   "label": "DC Number"
+  },
+  {
+   "fieldname": "dc_date",
+   "fieldtype": "Date",
+   "label": "DC Date"
+  },
+  {
+   "fieldname": "dc_submitted_date",
+   "fieldtype": "Date",
+   "label": "DC Submitted Date"
+  },
+  {
+   "default": "0",
+   "fieldname": "ack_received",
+   "fieldtype": "Check",
+   "label": "ACK Received"
+  },
+  {
+   "fieldname": "days_pending_ack",
+   "fieldtype": "Int",
+   "label": "Days Pending ACK"
+  },
+  {
+   "depends_on": "eval:doc.ack_recieved ==1",
+   "fieldname": "ack_received_date",
+   "fieldtype": "Date",
+   "label": "ACK Received Date"
+  },
+  {
+   "fieldname": "document_workflow_status",
+   "fieldtype": "Select",
+   "label": "Document Workflow Status",
+   "options": "Draft\nDC Created\nDC Submitted\nACK Received\nInvoice Generated\nPayment Received  Completed"
+  },
+  {
+   "fieldname": "financial_calculations_tab",
+   "fieldtype": "Tab Break",
+   "label": "Financial Calculations"
+  },
+  {
+   "fieldname": "financial_calculations_section",
+   "fieldtype": "Section Break",
+   "label": "Financial Calculations"
+  },
+  {
+   "fieldname": "rate_per_mt",
+   "fieldtype": "Currency",
+   "label": "Rate per MT"
+  },
+  {
+   "fieldname": "taxable_amount",
+   "fieldtype": "Currency",
+   "label": "Taxable Amount"
+  },
+  {
+   "fieldname": "gst_rate_",
+   "fieldtype": "Float",
+   "label": "GST Rate %"
+  },
+  {
+   "fieldname": "gst_amount",
+   "fieldtype": "Currency",
+   "label": "GST Amount"
+  },
+  {
+   "fieldname": "invoice_total",
+   "fieldtype": "Currency",
+   "label": "Invoice Total"
+  },
+  {
+   "fieldname": "invoice_number",
+   "fieldtype": "Data",
+   "label": "Invoice Number"
+  },
+  {
+   "fieldname": "invoice_date",
+   "fieldtype": "Date",
+   "label": "Invoice Date"
+  },
+  {
+   "fieldname": "column_break_ecjb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_tracking_tab",
+   "fieldtype": "Tab Break",
+   "label": "Payment Tracking"
+  },
+  {
+   "fieldname": "payment_tracking_section",
+   "fieldtype": "Section Break",
+   "label": "Payment Tracking"
+  },
+  {
+   "fieldname": "payment_received_date",
+   "fieldtype": "Date",
+   "label": "Payment Received Date"
+  },
+  {
+   "fieldname": "received_amount",
+   "fieldtype": "Currency",
+   "label": "Received Amount"
+  },
+  {
+   "fieldname": "tds_rate_",
+   "fieldtype": "Float",
+   "label": "TDS Rate %"
+  },
+  {
+   "fieldname": "tds_amount",
+   "fieldtype": "Currency",
+   "label": "TDS Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "outstanding_amount",
+   "fieldtype": "Currency",
+   "label": "Outstanding Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "label": "Payment Status",
+   "options": "Unpaid\nPartially Paid"
+  },
+  {
+   "fieldname": "batch_assignment_child_table_tab",
+   "fieldtype": "Tab Break",
+   "label": "Batch Assignment (Child Table)"
+  },
+  {
+   "fieldname": "batch_assignment_child_table_section",
+   "fieldtype": "Section Break",
+   "label": "Batch Assignment (Child Table)"
+  },
+  {
+   "fieldname": "batch_assignment",
+   "fieldtype": "Table",
+   "label": " Batch Assignment ",
+   "options": "Batch Assignment"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-04-06 12:52:04.866098",
+ "modified_by": "Administrator",
+ "module": "frk_procurement",
+ "name": "FRK Transaction",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

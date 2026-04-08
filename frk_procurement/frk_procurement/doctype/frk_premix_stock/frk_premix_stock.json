@@ -1,0 +1,99 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-04-06 11:56:53.944730",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_eq1d",
+  "amended_from",
+  "opening_stock_mt",
+  "supplied__used_mt",
+  "current_balance_mt",
+  "column_break_yvvs",
+  "frk_production_capacity_mt",
+  "stock_status",
+  "last_transaction_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_eq1d",
+   "fieldtype": "Section Break",
+   "label": "FRK Premix Stock"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Party",
+   "no_copy": 1,
+   "options": "FRK Entity",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "opening_stock_mt",
+   "fieldtype": "Float",
+   "label": "Opening Stock (MT)"
+  },
+  {
+   "fieldname": "supplied__used_mt",
+   "fieldtype": "Float",
+   "label": "Supplied / Used (MT)"
+  },
+  {
+   "fieldname": "current_balance_mt",
+   "fieldtype": "Float",
+   "label": "Current Balance (MT)"
+  },
+  {
+   "fieldname": "frk_production_capacity_mt",
+   "fieldtype": "Float",
+   "label": "FRK Production Capacity (MT)"
+  },
+  {
+   "fieldname": "stock_status",
+   "fieldtype": "Select",
+   "label": "Stock Status",
+   "options": "Critical Shortage (< -10)\nShortage (< 0)\nAdequate (0-5)\nSurplus (> 5)."
+  },
+  {
+   "fieldname": "last_transaction_date",
+   "fieldtype": "Date",
+   "label": "Last Transaction Date"
+  },
+  {
+   "fieldname": "column_break_yvvs",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-04-06 12:06:42.400644",
+ "modified_by": "Administrator",
+ "module": "frk_procurement",
+ "name": "FRK Premix Stock",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,103 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-03-31 21:27:56.489059",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "default_gst_rate",
+  "default_tds_rate",
+  "premix_to_frk_ratio",
+  "currency",
+  "column_break_prdw",
+  "financial_year_start_month",
+  "enable_batch_validation",
+  "enable_premix_stock_alerts",
+  "hyderabad_group_entities"
+ ],
+ "fields": [
+  {
+   "default": "0.05",
+   "description": "Default Rate is 5%",
+   "fieldname": "default_gst_rate",
+   "fieldtype": "Float",
+   "label": "Default GST Rate %"
+  },
+  {
+   "default": "0.1",
+   "description": "Default TDS Rate is 10%",
+   "fieldname": "default_tds_rate",
+   "fieldtype": "Float",
+   "label": "Default TDS Rate %"
+  },
+  {
+   "default": "50",
+   "description": "Default: 50. Formula: 1 MT Premix = 50 MT FRK (2% additive ratio).",
+   "fieldname": "premix_to_frk_ratio",
+   "fieldtype": "Float",
+   "label": "Premix to FRK Ratio"
+  },
+  {
+   "default": "INR",
+   "description": "Default currency is INR",
+   "fieldname": "currency",
+   "fieldtype": "Data",
+   "label": "Currency"
+  },
+  {
+   "default": "April",
+   "description": "Default is April",
+   "fieldname": "financial_year_start_month",
+   "fieldtype": "Select",
+   "label": "Financial Year Start Month",
+   "options": "Jan\nFeb\nMarch\nApril"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_batch_validation",
+   "fieldtype": "Check",
+   "label": "Enable Batch Validation"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_premix_stock_alerts",
+   "fieldtype": "Check",
+   "label": "Enable Premix Stock Alerts"
+  },
+  {
+   "fieldname": "hyderabad_group_entities",
+   "fieldtype": "Small Text",
+   "label": "Hyderabad Group Entities"
+  },
+  {
+   "fieldname": "column_break_prdw",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-03-31 21:47:24.363803",
+ "modified_by": "Administrator",
+ "module": "frk_procurement",
+ "name": "FRK Procurement Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

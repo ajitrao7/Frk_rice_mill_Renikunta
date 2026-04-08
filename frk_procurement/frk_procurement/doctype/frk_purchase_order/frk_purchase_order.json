@@ -1,0 +1,157 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-03-31 22:49:34.106757",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ktw8",
+  "po_number",
+  "authority",
+  "po_date",
+  "rice_type",
+  "ordered_quantity",
+  "district",
+  "delivery_location__village",
+  "rate_per_mt",
+  "column_break_mylk",
+  "supplied_quantity_mt",
+  "remaining_quantity_mt",
+  "po_status",
+  "is_odd_po",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ktw8",
+   "fieldtype": "Section Break",
+   "label": "FRK Purchase Order"
+  },
+  {
+   "fieldname": "po_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "PO Number",
+   "no_copy": 1,
+   "options": "FRK Purchase Order",
+   "print_hide": 1,
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "authority",
+   "fieldtype": "Link",
+   "label": "Authority",
+   "options": "FRK Entity"
+  },
+  {
+   "fieldname": "rice_type",
+   "fieldtype": "Select",
+   "label": "Rice Type",
+   "options": "RAW\nBOILED"
+  },
+  {
+   "fieldname": "ordered_quantity",
+   "fieldtype": "Float",
+   "label": "Ordered Quantity (MT)"
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "District",
+   "reqd": 1
+  },
+  {
+   "fieldname": "delivery_location__village",
+   "fieldtype": "Data",
+   "label": "Delivery Location / Village"
+  },
+  {
+   "fieldname": "rate_per_mt",
+   "fieldtype": "Currency",
+   "label": "Rate per MT"
+  },
+  {
+   "fieldname": "remaining_quantity_mt",
+   "fieldtype": "Float",
+   "label": "Remaining Quantity (MT)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "supplied_quantity_mt",
+   "fieldtype": "Float",
+   "label": "Supplied Quantity (MT)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "po_status",
+   "fieldtype": "Select",
+   "label": "PO Status",
+   "options": "Open\nCompleted"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_odd_po",
+   "fieldtype": "Check",
+   "label": "Is ODD PO"
+  },
+  {
+   "description": "Any special instructions from authority.",
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "column_break_mylk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "po_date",
+   "fieldtype": "Date",
+   "label": "PO Date"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "FRK Purchase Order",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-04-01 22:40:41.254737",
+ "modified_by": "Administrator",
+ "module": "frk_procurement",
+ "name": "FRK Purchase Order",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "po_number"
+}

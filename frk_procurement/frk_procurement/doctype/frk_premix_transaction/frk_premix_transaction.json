@@ -1,0 +1,139 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-04-06 11:43:04.885803",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_nkpz",
+  "transaction_type",
+  "transaction_date",
+  "party",
+  "bill_number",
+  "quantity_mt",
+  "rate_per_mt",
+  "amount",
+  "column_break_yzfi",
+  "gst_rate_",
+  "gst_amount",
+  "total_amount",
+  "linked_to_frk_transaction",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_nkpz",
+   "fieldtype": "Section Break",
+   "label": "FRK Premix Transaction"
+  },
+  {
+   "fieldname": "transaction_type",
+   "fieldtype": "Select",
+   "label": "Transaction Type",
+   "options": "Purchase\nSale"
+  },
+  {
+   "fieldname": "transaction_date",
+   "fieldtype": "Date",
+   "label": "Transaction Date"
+  },
+  {
+   "fieldname": "party",
+   "fieldtype": "Link",
+   "label": "Party",
+   "options": "FRK Entity"
+  },
+  {
+   "fieldname": "bill_number",
+   "fieldtype": "Data",
+   "label": "Bill Number"
+  },
+  {
+   "fieldname": "quantity_mt",
+   "fieldtype": "Float",
+   "label": "Quantity (MT)"
+  },
+  {
+   "fieldname": "rate_per_mt",
+   "fieldtype": "Currency",
+   "label": "Rate per MT"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_yzfi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gst_rate_",
+   "fieldtype": "Float",
+   "label": "GST Rate %"
+  },
+  {
+   "fieldname": "gst_amount",
+   "fieldtype": "Currency",
+   "label": "GST Amount"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "linked_to_frk_transaction",
+   "fieldtype": "Link",
+   "label": "Linked to FRK Transaction",
+   "options": "FRK Transaction"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "FRK Premix Transaction",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-04-06 11:56:01.781191",
+ "modified_by": "Administrator",
+ "module": "frk_procurement",
+ "name": "FRK Premix Transaction",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

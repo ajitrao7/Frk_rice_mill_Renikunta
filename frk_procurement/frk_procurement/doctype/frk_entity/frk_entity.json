@@ -1,0 +1,215 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "FRK-ENT-.#####",
+ "creation": "2026-03-31 17:29:32.702175",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_uyoz",
+  "entity_name",
+  "entity_type",
+  "gstin",
+  "pan",
+  "column_break_hehq",
+  "short_code",
+  "is_active",
+  "is_hyderabad_group",
+  "has_bag_brand",
+  "address_details_section",
+  "billing_address",
+  "column_break_fcpu",
+  "shipping_address",
+  "contact_details_tab",
+  "contact_details_section",
+  "primary_contac_person",
+  "primary_contact_mobile",
+  "primary_contact_email",
+  "bank_details_tab",
+  "bank_details_section",
+  "bank_name",
+  "bank_account_number",
+  "bank_ifsc_code",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_uyoz",
+   "fieldtype": "Section Break",
+   "label": "Basic Information about Entity"
+  },
+  {
+   "fieldname": "entity_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Entity Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "entity_type",
+   "fieldtype": "Select",
+   "label": "Entity Type",
+   "options": "Client Entity\nSupplier Entity\nAuthority\nTransporter\nPremix Supplier."
+  },
+  {
+   "description": "2-3 character code for document numbering. Example: SSS, RK, NV.",
+   "fieldname": "short_code",
+   "fieldtype": "Data",
+   "label": "Short Code",
+   "length": 3,
+   "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "is_Active"
+  },
+  {
+   "description": "GST Identification Number. ",
+   "fieldname": "gstin",
+   "fieldtype": "Data",
+   "label": "GSTIN",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pan",
+   "fieldtype": "Data",
+   "label": "PAN",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_hehq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_hyderabad_group",
+   "fieldtype": "Check",
+   "label": "Is Hyderabad Group"
+  },
+  {
+   "default": "0",
+   "fieldname": "has_bag_brand",
+   "fieldtype": "Check",
+   "label": "Has Bag Brand"
+  },
+  {
+   "fieldname": "address_details_section",
+   "fieldtype": "Section Break",
+   "label": "Address Details"
+  },
+  {
+   "fieldname": "billing_address",
+   "fieldtype": "Small Text",
+   "label": "Billing Address"
+  },
+  {
+   "fieldname": "column_break_fcpu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shipping_address",
+   "fieldtype": "Small Text",
+   "label": "Shipping Address"
+  },
+  {
+   "fieldname": "contact_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Contact Details"
+  },
+  {
+   "fieldname": "primary_contac_person",
+   "fieldtype": "Data",
+   "label": "Primary Contact Person",
+   "reqd": 1
+  },
+  {
+   "fieldname": "primary_contact_mobile",
+   "fieldtype": "Int",
+   "label": "Primary Contact Mobile"
+  },
+  {
+   "fieldname": "primary_contact_email",
+   "fieldtype": "Data",
+   "label": "Primary Contact Email"
+  },
+  {
+   "fieldname": "contact_details_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Details"
+  },
+  {
+   "fieldname": "bank_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Bank Details"
+  },
+  {
+   "fieldname": "bank_details_section",
+   "fieldtype": "Section Break",
+   "label": "Bank Details"
+  },
+  {
+   "fieldname": "bank_name",
+   "fieldtype": "Data",
+   "label": "Bank Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bank_account_number",
+   "fieldtype": "Data",
+   "label": "Bank Account Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bank_ifsc_code",
+   "fieldtype": "Data",
+   "label": "Bank IFSC Code",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "FRK Entity",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-04-08 09:27:16.718846",
+ "modified_by": "Administrator",
+ "module": "frk_procurement",
+ "name": "FRK Entity",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "entity_name",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "entity_name"
+}
